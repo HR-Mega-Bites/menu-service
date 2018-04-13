@@ -1,19 +1,14 @@
 const express = require('express');
 const parser = require('body-parser');
-const path = require('path');
-const pgClient = require('../database/index.js');
+const db = require('../database/index.js');
 
-const app = express();
+let app = express();
 
-app.use(express.static(path.join(__dirname, '/../public')));
+app.use(express.static(__dirname + '/../public'));
 app.use(parser.json());
 
-app.get('/recipes/:id', (req, res) => {
-  res.send('testing');
-});
+let port = 8080;
 
-const port = 8080;
-
-app.listen(port, () => {
+app.listen(port, function() {
   console.log(`listening on http://localhost:${port}`);
 });
