@@ -9,11 +9,7 @@ app.use(express.static(path.join(__dirname, '/../public')));
 app.use(parser.json());
 
 app.get('/recipes/:id', (req, res) => {
-  const { id } = req.params;
-  const recipeQuery = `SELECT * FROM recipes WHERE id = ${id}`;
-  pgClient.query(recipeQuery, (err, recipeInfo) => {
-    res.send(recipeInfo.rows[0]);
-  });
+  res.send('testing');
 });
 
 const port = 8080;
