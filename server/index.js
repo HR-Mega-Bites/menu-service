@@ -1,14 +1,23 @@
 const express = require('express');
 const parser = require('body-parser');
-const db = require('../database/index.js');
+const path = require('path');
+const pgClient = require('../database/index.js');
 
-let app = express();
+const app = express();
 
-app.use(express.static(__dirname + '/../public'));
+app.use(express.static(path.join(__dirname, '/../public')));
 app.use(parser.json());
 
-let port = 8080;
+app.get('/recipes/:id', (req, res) => {
+  const { id } = req.params;
+  const recipeQuery = `SELECT * FROM recipes WHERE id = ${id}`;
+  pgClient.query(recipeQuery, (err, recipeInfo) => {
+    res.send(recipeInfo.rows[0]);
+  });
+});
 
-app.listen(port, function() {
+const port = 8080;
+
+app.listen(port, () => {
   console.log(`listening on http://localhost:${port}`);
 });
