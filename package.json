@@ -44,6 +44,6 @@
     "webpack-cli": "^2.0.14"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./client/src/components/tests/testSetup.js"
+    "setupTestFrameworkScriptFile": "./client/src/components/__tests__/testSetup.js"
   }
 }
