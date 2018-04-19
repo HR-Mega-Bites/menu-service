@@ -1,0 +1,30 @@
+li {
+  list-style-type: none;
+}
+.recipe-info-container {
+  padding: 15px 0 15px;
+  margin: 15px 0 20px;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  text-align: center;
+}
+
+.list-item-info {
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  font-family: "Cera Pro", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-size: 16px;
+  color: #404040;
+}
+
+.list-item-name {
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.list-item-icon {
+  height: 40px;
+  width: auto;
+}
