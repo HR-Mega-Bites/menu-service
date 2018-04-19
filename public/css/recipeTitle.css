@@ -1,0 +1,44 @@
+h2 {
+  font-family: "HelveticaNeue";
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.recipe-title-main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.2;
+  font-family: "HelveticaNeue";
+  color: #0F346C;
+}
+
+.recipe-title-sub {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: "HelveticaNeue";
+  color: #404040;
+}
+
+.tag-container {
+  margin-top: 15px;
+}
+
+.tag {
+  padding: 9px 8px;
+  color: #2e62af;
+  background: rgba(46,98,175,0.08);
+  border: 1px solid rgba(46,98,175,0);
+  border-radius: 3px;
+  font-size: 12px;
+  font-family: "HelveticaNeue";
+  font-weight: 500;
+  display: inline-block;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  line-height: initial;
+}
