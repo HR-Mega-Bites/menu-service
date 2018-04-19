@@ -45,7 +45,7 @@ const insertDummyData = function () {
       }
     });
   }
-
+  
   for (let i = 0; i < 20; i++) { // insert pairings into database
     let recipeid = getRandomInt(99);
     let wineid = getRandomInt(15);
