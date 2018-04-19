@@ -5,7 +5,7 @@ import RecipeServings from './RecipeServings';
 import RecipeNutrition from './RecipeNutrition';
 
 const RecipeInfo = () => (
-  <Row className="recipe-info-container">
+  <Row className="recipe-info">
     <Col sm={4} sm-pull={4}>
       <RecipeTime />
     </Col>
