@@ -9,7 +9,7 @@ const WinePairings = () => (
         <Wine />
         <Wine />
         <div className="recipe-wine-nav">
-          <div className="recipe-wine-nav-button" />
+          <div className="recipe-wine-nav-arrow" />
         </div>
       </div>
     </div>
