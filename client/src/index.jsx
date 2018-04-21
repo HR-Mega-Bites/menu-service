@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Grid, Row, Col, Image } from 'react-bootstrap';
+import { Grid, Col, Image } from 'react-bootstrap';
 import RecipeTitle from './components/RecipeTitle';
 import RecipeInfo from './components/RecipeInfo';
 import RecipeDescription from './components/RecipeDescription';

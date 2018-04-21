@@ -1,7 +1,14 @@
+.recipe-wine {
+  position: relative;
+}
+
+.scroll-button-container {
+  position: relative;
+}
+
 .recipe-wine-container {
   white-space: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  overflow: auto;
 }
 
 .recipe-wine-title {
@@ -75,3 +82,27 @@
   color: #404040;
 }
 
+.recipe-wine-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 140px;
+}
+
+.recipe-wine-nav-button {
+  background-image: url("https://media.blueapron.com/assets/svg/carousel-right-f33f02c3fc4017df3238faddc18fb1688fadc257ab628c4ba8cd4dd063b2bbed.svg");
+  float: right;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border-radius: 4px;
+  opacity: 0.9;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
