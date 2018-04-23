@@ -4,11 +4,15 @@
 
 .scroll-button-container {
   position: relative;
+  max-width: 500px;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .recipe-wine-container {
   white-space: nowrap;
-  overflow: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .recipe-wine-title {
