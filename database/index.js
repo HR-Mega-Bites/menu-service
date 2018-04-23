@@ -6,4 +6,3 @@ const pgClient = new pg.Client(connectionString);
 pgClient.connect();
 
 module.exports = pgClient;
-
