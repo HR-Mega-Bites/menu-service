@@ -22,15 +22,15 @@ describe('<RecipeNutritionModal />', () => {
   });
 });
 
-describe('<WinePairings /> functions', () => {
-  it('should call handleArrowClick when wine nav arrow is clicked', () => {
-    const wrapper = shallow(<WinePairings />);
-    console.log(wrapper.props());
-    const handleClickSpy = sinon.spy(WinePairings.prototype, 'handleArrowClick');
-    wrapper.find('.recipe-wine-nav-arrow').simulate('click');
-    sinon.assert.calledOnce(handleClickSpy);
-  });
-});
+// describe('<WinePairings /> functions', () => {
+//   it('should call handleArrowClick when wine nav arrow is clicked', () => {
+//     const wrapper = shallow(<WinePairings />);
+//     console.log(wrapper.props());
+//     const handleClickSpy = sinon.spy(WinePairings.prototype, 'handleArrowClick');
+//     wrapper.find('.recipe-wine-nav-arrow').simulate('click');
+//     sinon.assert.calledOnce(handleClickSpy);
+//   });
+// });
 
 // describe('<RecipeInfo />', () => {
 //   test('should render RecipeTime component', () => {
