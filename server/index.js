@@ -11,7 +11,9 @@ app.use(parser.json());
 app.get('/recipes/:id/menu', (req, res) => {
   const { id } = req.params;
   const recipeQuery = `SELECT * FROM recipes WHERE id = ${id}`;
-  const wineQuery = `select w.* from pairings p inner join wines w on w.id = p.wineid where p.recipeid = ${id}`;
+  const wineQuery = `SELECT w.* FROM pairings p 
+                     INNER JOIN wines w ON w.id = p.wineid 
+                     WHERE p.recipeid = ${id}`;
   pgClient.query(recipeQuery, (err, recipeInfo) => {
     if (err) res.send(err);
     pgClient.query(wineQuery, (err2, winePairings) => {
