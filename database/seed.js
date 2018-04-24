@@ -16,11 +16,11 @@ const insertDummyData = function () {
     let id = i;
     let name = recipeNames[i];
     let namesub = faker.lorem.word();
-    let tags = '{"tag1", "tag2"}';
+    let tags = `{"${faker.lorem.word()}", "${faker.lorem.word()}"}`;
     let time = '30-45 mins';
-    let description = 'recipedesc' + faker.lorem.word();
-    let servings = 2;
-    let calories = 234;
+    let description = 'recipedesc' + faker.lorem.paragraph();
+    let servings = getRandomInt(5);
+    let calories = getRandomInt(1000);
     let imgurl = faker.image.image();
     let recipeQuery = `INSERT INTO recipes (id, name, namesub, tags, time, description, servings, calories, imgurl) VALUES (${id}, '${name}', '${namesub}', '${tags}', '${time}', '${description}', ${servings}, ${calories}, '${imgurl}')`;
 

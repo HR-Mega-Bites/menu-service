@@ -3,7 +3,7 @@ import React from 'react';
 import $ from 'jquery';
 import Wine from './Wine';
 
-const WinePairings = () => {
+const WinePairings = ({ wines }) => {
   const handleArrowClick = (e) => {
     const $wineContainer = $('.recipe-wine-container');
     const $wineInfo = $('.recipe-wine-info');
@@ -29,16 +29,18 @@ const WinePairings = () => {
       <h6 className="recipe-wine-title">BLUE APRON WINE PAIRING</h6>
       <div className="scroll-button-container">
         <div className="recipe-wine-container">
-          <Wine />
-          <Wine />
+          {wines.map(wine => 
+            <Wine key={wine.id}
+                  title={wine.name}
+                  subtitle={wine.namesub}
+                  description={wine.description}
+                  imgurl={wine.imgurl} />)
+          }
           <div className="recipe-wine-nav">
             <div onClick={(e) => handleArrowClick(e)} className="recipe-wine-nav-arrow" />
           </div>
         </div>
       </div>
-      {/* {wines.map(wine => <Wine img={wine.img}
-      title={wine.title} sub-title={wine.sub}
-      description={wine.description} /> } */}
     </section>
   );
 };

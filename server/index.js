@@ -5,14 +5,21 @@ const pgClient = require('../database/index.js');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, '/../public')));
+app.use('/recipes/:id', express.static(path.join(__dirname, '/../public')));
 app.use(parser.json());
 
-app.get('/recipes/:id', (req, res) => {
+app.get('/recipes/:id/menu', (req, res) => {
   const { id } = req.params;
   const recipeQuery = `SELECT * FROM recipes WHERE id = ${id}`;
+  const wineQuery = `select w.* from pairings p inner join wines w on w.id = p.wineid where p.recipeid = ${id}`;
   pgClient.query(recipeQuery, (err, recipeInfo) => {
-    res.send(recipeInfo.rows[0]);
+    if (err) res.send(err);
+    pgClient.query(wineQuery, (err2, winePairings) => {
+      if (err2) res.send(err2);
+      const recipeResult = recipeInfo.rows[0];
+      recipeResult.wines = winePairings.rows;
+      res.send(recipeResult);
+    });
   });
 });
 

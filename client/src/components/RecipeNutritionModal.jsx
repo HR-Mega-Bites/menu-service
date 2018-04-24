@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
 
 class RecipeNutritionModal extends React.Component {
@@ -25,7 +26,7 @@ class RecipeNutritionModal extends React.Component {
     return (
       <div className="list-item-value">{
         // eslint-disable-next-line
-        }<span onClick={this.handleShow} className="modal-link">500 cals</span>
+        }<span onClick={this.handleShow} className="modal-link">{this.props.calories} cals</span>
         <Modal show={this.state.show} onHide={this.handleClose} >
           <Modal.Body>
             <img src="https://media.blueapron.com/recipes/2901/facility/38/nutritional_label/1523888732-1-0007-4830/042318__2PM__White_Cheddar_Cheeseburgers__As_Packaged__LN.png" alt="nutrition label" className="nutrition-label-img" />
@@ -44,5 +45,13 @@ class RecipeNutritionModal extends React.Component {
     );
   }
 }
+
+RecipeNutritionModal.propTypes = {
+  calories: PropTypes.number,
+};
+
+RecipeNutritionModal.defaultProps = {
+  calories: 404,
+};
 
 export default RecipeNutritionModal;
