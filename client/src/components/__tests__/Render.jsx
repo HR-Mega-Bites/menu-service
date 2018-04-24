@@ -27,8 +27,8 @@ describe('<App />', () => {
   });
 
   test('should render WinePairings component', () => {
-    const wrapper = shallow(<WinePairings />);
-    expect(wrapper.find('.recipe-wine').length).toBe(1);
+    const wrapper = shallow(<App />);
+    expect(wrapper.find(WinePairings).length).toBe(1);
   });
 });
 
