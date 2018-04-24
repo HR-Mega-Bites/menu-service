@@ -4,7 +4,7 @@ import $ from 'jquery';
 import Wine from './Wine';
 
 const WinePairings = () => {
-  const handleArrowClick = (e) => {
+  const handleArrowClick = () => {
     const $wineContainer = $('.recipe-wine-container');
     const $wineInfo = $('.recipe-wine-info');
     const numWines = $wineContainer.children.length;
@@ -32,7 +32,7 @@ const WinePairings = () => {
           <Wine />
           <Wine />
           <div className="recipe-wine-nav">
-            <div onClick={(e) => handleArrowClick(e)} className="recipe-wine-nav-arrow" />
+            <div onClick={() => handleArrowClick()} className="recipe-wine-nav-arrow" />
           </div>
         </div>
       </div>
