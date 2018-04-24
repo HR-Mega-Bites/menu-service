@@ -37,7 +37,7 @@ const WinePairings = ({ wines }) => {
                   imgurl={wine.imgurl} />)
           }
           <div className="recipe-wine-nav">
-            <div onClick={(e) => handleArrowClick(e)} className="recipe-wine-nav-arrow" />
+            <div onClick={() => handleArrowClick()} className="recipe-wine-nav-arrow" />
           </div>
         </div>
       </div>
