@@ -8,7 +8,7 @@ import RecipeServings from '../RecipeServings';
 import RecipeNutrition from '../RecipeNutrition';
 import RecipeDescription from '../RecipeDescription';
 import WinePairings from '../WinePairings';
-import Wine from '../Wine';
+// import Wine from '../Wine';
 
 // THIS FILE TESTS IF ALL COMPONENTS RENDER PROPERLY
 
@@ -57,9 +57,9 @@ describe('<RecipeInfo />', () => {
 
 // -------------WINEPAIRINGS COMPONENT-------------
 
-describe('<WinePairings />', () => {
-  it('should render Wine components', () => {
-    const wrapper = shallow(<WinePairings />);
-    expect(wrapper.find(Wine).length).toBeGreaterThan(0);
-  });
-});
+// describe('<WinePairings />', () => {
+//   it('should render Wine components', () => {
+//     const wrapper = shallow(<WinePairings />);
+//     expect(wrapper.find(Wine).length).toBeGreaterThan(0);
+//   });
+// });
