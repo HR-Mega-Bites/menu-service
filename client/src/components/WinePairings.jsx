@@ -23,7 +23,7 @@ const handleArrowClick = () => {
   $wineContainer.animate({scrollLeft: scrollDistance}, scrollTime);
 };
 
-const WinePairings = () => {
+const WinePairings = ({wines}) => {
   return (
     <section className="recipe-wine">
       <h6 className="recipe-wine-title">BLUE APRON WINE PAIRING</h6>
