@@ -20,6 +20,7 @@ CREATE TABLE recipes (
 CREATE TABLE wines (
   id INT PRIMARY KEY NOT NULL,
   name VARCHAR(20),
+  namesub VARCHAR(20),
   description TEXT,
   imgurl TEXT
 );
