@@ -3,27 +3,27 @@ import React from 'react';
 import $ from 'jquery';
 import Wine from './Wine';
 
-const WinePairings = ({ wines }) => {
-  const handleArrowClick = (e) => {
-    const $wineContainer = $('.recipe-wine-container');
-    const $wineInfo = $('.recipe-wine-info');
-    const numWines = $wineContainer.children.length;
-    const totalContainerWidth = $wineInfo.outerWidth(true) * numWines;
-    
-    const getWineContainerSize = () => {
-      return $wineContainer.outerWidth();
-    }
-    const wineContainerSize = getWineContainerSize();
-    
-    const getScrollDistance = () => {
-      return totalContainerWidth - wineContainerSize;
-    }
-    const scrollDistance = getScrollDistance();
+const handleArrowClick = () => {
+  const $wineContainer = $('.recipe-wine-container');
+  const $wineInfo = $('.recipe-wine-info');
+  const numWines = $wineContainer.children.length;
+  const totalContainerWidth = $wineInfo.outerWidth(true) * numWines;
+  
+  const getWineContainerSize = () => {
+    return $wineContainer.outerWidth();
+  }
+  const wineContainerSize = getWineContainerSize();
+  
+  const getScrollDistance = () => {
+    return totalContainerWidth - wineContainerSize;
+  }
+  const scrollDistance = getScrollDistance();
 
-    const scrollTime = 400;
-    $wineContainer.animate({scrollLeft: scrollDistance}, scrollTime);
-  };
+  const scrollTime = 400;
+  $wineContainer.animate({scrollLeft: scrollDistance}, scrollTime);
+};
 
+const WinePairings = ({wines}) => {
   return (
     <section className="recipe-wine">
       <h6 className="recipe-wine-title">BLUE APRON WINE PAIRING</h6>
@@ -37,7 +37,7 @@ const WinePairings = ({ wines }) => {
                   imgurl={wine.imgurl} />)
           }
           <div className="recipe-wine-nav">
-            <div onClick={(e) => handleArrowClick(e)} className="recipe-wine-nav-arrow" />
+            <div onClick={() => handleArrowClick()} className="recipe-wine-nav-arrow" />
           </div>
         </div>
       </div>
@@ -45,4 +45,5 @@ const WinePairings = ({ wines }) => {
   );
 };
 
+export { handleArrowClick };
 export default WinePairings;

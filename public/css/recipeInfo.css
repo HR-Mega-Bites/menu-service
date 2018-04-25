@@ -59,7 +59,6 @@ button.close,
 .modal-content {
   max-width: 400px;
   max-height: 710px;
-  margin-bottom: 50px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   display: inline-block;
