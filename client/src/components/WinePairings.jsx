@@ -3,6 +3,7 @@ import React from 'react';
 import $ from 'jquery';
 import Wine from './Wine';
 
+<<<<<<< HEAD
 const handleArrowClick = () => {
   const $wineContainer = $('.recipe-wine-container');
   const $wineInfo = $('.recipe-wine-info');
@@ -18,6 +19,24 @@ const handleArrowClick = () => {
     return totalContainerWidth - wineContainerSize;
   }
   const scrollDistance = getScrollDistance();
+=======
+const WinePairings = () => {
+  const handleArrowClick = () => {
+    const $wineContainer = $('.recipe-wine-container');
+    const $wineInfo = $('.recipe-wine-info');
+    const numWines = $wineContainer.children.length;
+    const totalContainerWidth = $wineInfo.outerWidth(true) * numWines;
+    
+    const getWineContainerSize = () => {
+      return $wineContainer.outerWidth();
+    }
+    const wineContainerSize = getWineContainerSize();
+    
+    const getScrollDistance = () => {
+      return totalContainerWidth - wineContainerSize;
+    }
+    const scrollDistance = getScrollDistance();
+>>>>>>> 4119b3f20879c1e0539af81eb78f9cb23cf67269
 
   const scrollTime = 400;
   $wineContainer.animate({scrollLeft: scrollDistance}, scrollTime);
