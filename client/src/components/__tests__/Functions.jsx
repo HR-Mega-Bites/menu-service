@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
+// import sinon from 'sinon';
 // import App from '../App';
 // import RecipeTitle from '../RecipeTitle';
 // import RecipeInfo from '../RecipeInfo';
@@ -9,7 +9,7 @@ import sinon from 'sinon';
 // import RecipeNutrition from '../RecipeNutrition';
 import RecipeNutritionModal from '../RecipeNutritionModal';
 // import RecipeDescription from '../RecipeDescription';
-import WinePairings from '../WinePairings';
+// import WinePairings from '../WinePairings';
 // import Wine from '../Wine';
 
 // -------------RECIPE NUTRTION MODAL-------------

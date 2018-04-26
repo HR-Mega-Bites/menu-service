@@ -7,7 +7,7 @@ import RecipeTime from '../RecipeTime';
 import RecipeServings from '../RecipeServings';
 import RecipeNutrition from '../RecipeNutrition';
 import RecipeDescription from '../RecipeDescription';
-import WinePairings from '../WinePairings';
+// import WinePairings from '../WinePairings';
 // import Wine from '../Wine';
 
 // THIS FILE TESTS IF ALL COMPONENTS RENDER PROPERLY
@@ -30,10 +30,10 @@ describe('<App />', () => {
     expect(wrapper.find(RecipeDescription).length).toBe(1);
   });
 
-  it('should render WinePairings component', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.find(WinePairings).length).toBe(1);
-  });
+//   it('should render WinePairings component', () => {
+//     const wrapper = shallow(<App />);
+//     expect(wrapper.find(WinePairings).length).toBe(1);
+//   });
 });
 
 // -------------RECIPE INFO COMPONENTS-------------
