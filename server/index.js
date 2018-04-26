@@ -1,10 +1,13 @@
 const express = require('express');
+const cors = require('cors');
 const parser = require('body-parser');
 const path = require('path');
 const pgClient = require('../database/index.js');
 
 const app = express();
 
+app.use(cors());
+app.use('/', express.static(path.join(__dirname, '/../public')));
 app.use('/recipes/:id', express.static(path.join(__dirname, '/../public')));
 app.use(parser.json());
 
@@ -15,9 +18,17 @@ app.get('/recipes/:id/menu', (req, res) => {
                      INNER JOIN wines w ON w.id = p.wineid 
                      WHERE p.recipeid = ${id}`;
   pgClient.query(recipeQuery, (err, recipeInfo) => {
-    if (err) res.send(err);
-    pgClient.query(wineQuery, (err2, winePairings) => {
-      if (err2) res.send(err2);
+    if (err) {
+      res.status(500);
+      res.send(err);
+      return;
+    }
+    pgClient.query(wineQuery, (err, winePairings) => {
+      if (err) {
+        res.status(500);
+        res.send(err);
+        return;
+      }
       const recipeResult = recipeInfo.rows[0];
       recipeResult.wines = winePairings.rows;
       res.send(recipeResult);
@@ -25,7 +36,7 @@ app.get('/recipes/:id/menu', (req, res) => {
   });
 });
 
-const port = 8080;
+const port = 3001;
 
 app.listen(port, () => {
   console.log(`listening on http://localhost:${port}`);
