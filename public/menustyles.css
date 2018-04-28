@@ -1,0 +1,298 @@
+.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  margin-right: -1.5%;
+  margin-left: -1.5%;
+}
+
+p {
+  font: inherit;
+  font-size: 16px;
+  line-height: 2;
+  display: block;
+}
+
+/* override bootstrap default css */
+a:hover,
+a:visited,
+a:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.get-cooking-btn {
+  background-color: #f26226;
+  border-color: #f26226;
+  border-radius: 6px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  padding: 0 33px;
+  box-sizing: content-box;
+  font-size: 18px;
+  line-height: 50.7px;
+  height: 50.7px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: "HelveticaNeue";
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.get-cooking-btn:hover {
+  background-color: #e7581d;
+  border-color: #e7581d;
+}
+li {
+  list-style-type: none;
+}
+.recipe-info {
+  padding: 15px 0 15px;
+  margin: 15px 0 20px;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.list-item-info {
+  flex-grow: 1;
+  font-family: "HelveticaNeue";
+  font-size: 14px;
+  color: #404040;
+}
+
+.list-item-name {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.list-item-value {
+  font-weight: 300;
+}
+
+.modal-link {
+  color: #0F346C;
+  cursor: pointer;
+}
+
+.list-item-icon {
+  height: 40px;
+  width: auto;
+}
+
+button.close,
+.close:focus,
+.close:hover {
+  background-image: url("https://media.blueapron.com/assets/fancybox/fancybox_sprite-b9d6fddb0988440902fcfc72f371ecfa80ee2eb36073f9eebc17449ee41c886f.png");
+  top: -18px;
+  right: -18px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  position: fixed;
+  opacity: 1;
+  outline: none;
+}
+
+.modal-dialog {
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal-content {
+  max-width: 400px;
+  max-height: 710px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  display: inline-block;
+  text-align: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.nutrition-label-img {
+  width: 100%;
+}
+
+.nutrition-label-legal {
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 10px 20px;  
+}
+
+.recipe-left-container {
+  padding: 15px;
+}
+.recipe-right-container {
+  float: right;
+}
+.recipe-image {
+  width: 100%;
+}
+h2 {
+  font-family: "HelveticaNeue";
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.recipe-title-main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.2;
+  font-family: "HelveticaNeue";
+  color: #0F346C;
+}
+
+.recipe-title-sub {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: "HelveticaNeue";
+  color: #404040;
+}
+
+.tag-container {
+  margin-top: 15px;
+}
+
+.tag {
+  padding: 9px 8px;
+  color: #2e62af;
+  background: rgba(46,98,175,0.08);
+  border: 1px solid rgba(46,98,175,0);
+  border-radius: 3px;
+  font-size: 12px;
+  font-family: "HelveticaNeue";
+  font-weight: 500;
+  display: inline-block;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  line-height: initial;
+}
+.recipe-wine {
+  position: relative;
+}
+
+.scroll-button-container {
+  position: relative;
+  max-width: 500px;
+}
+
+.recipe-wine-container {
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.recipe-wine-title {
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.recipe-wine-info {
+  width: 370px;
+  height: 140px;
+  display: inline-block;
+}
+
+.recipe-wine-bottle {
+  width: 40px;
+  height: 115px;
+  float: left;
+}
+
+.wine-bottle-img {
+  width: 100%;
+}
+
+.recipe-wine-title {
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.recipe-wine-text {
+  float: left;
+  width: 70%;
+  padding-left: 20px;
+  white-space: normal;
+}
+
+.mb-5 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.recipe-wine-bottle {
+  width: 40px;
+  height: 115px;
+  float: left;
+}
+
+.wine-bottle-img {
+  width: 100%;
+}
+
+.wine-text-title {
+  color: #0F346C;
+}
+
+.wine-text-subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+}
+
+.wine-text-description {
+  font-size: 14px;
+  font-weight: 300;
+  font-family: "HelveticaNeue";
+  color: #404040;
+}
+
+.recipe-wine-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 140px;
+}
+
+.recipe-wine-nav-arrow {
+  background-image: url("https://media.blueapron.com/assets/svg/carousel-right-f33f02c3fc4017df3238faddc18fb1688fadc257ab628c4ba8cd4dd063b2bbed.svg");
+  float: right;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border-radius: 4px;
+  opacity: 0.9;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+

@@ -2,6 +2,7 @@ const faker = require('faker');
 const pgClient = require('./index.js');
 
 /*eslint-disable */
+
 const getRandomInt = function(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -45,18 +46,23 @@ const insertDummyData = function () {
       }
     });
   }
-  
-  for (let i = 0; i < 20; i++) { // insert pairings into database
-    let recipeid = getRandomInt(99);
-    let wineid = getRandomInt(15);
 
-    let pairingsQuery = `INSERT INTO pairings (recipeid, wineid) VALUES (${recipeid}, ${wineid})`;
-    pgClient.query(pairingsQuery, (err, res) => {
-      if (err) {
-        console.log(err);
-      }
-    });
+  let queryString = ``;
+  for (let i = 0; i < 2; i++) { // insert 2 wines per recipe into database
+    for (let j = 0; j < 100; j++) { 
+      let recipeid = j;
+      let wineid = getRandomInt(15);
+      queryString += `(${recipeid}, ${wineid}), `;
+    }
   }
+  queryString = queryString.substring(0, queryString.length - 2)
+  let pairingsQuery = `INSERT INTO pairings (recipeid, wineid) VALUES ${queryString}`;
+  pgClient.query(pairingsQuery, (err, res) => {
+    if (err) {
+      throw err;
+    }
+    pgClient.end();
+  });
 };
 
 insertDummyData();

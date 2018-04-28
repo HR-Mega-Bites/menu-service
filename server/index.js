@@ -29,15 +29,15 @@ app.get('/recipes/:id/menu', (req, res) => {
         res.send(err);
         return;
       }
-      const recipeResult = recipeInfo.rows[0];
-      recipeResult.wines = winePairings.rows;
-      res.send(recipeResult);
+      const recipe = recipeInfo.rows[0];
+      if (recipe) {
+        recipe.wines = winePairings.rows;
+      }
+      res.send(recipe);
     });
   });
 });
 
 const port = 3001;
 
-app.listen(port, () => {
-  console.log(`listening on http://localhost:${port}`);
-});
+app.listen(port);
