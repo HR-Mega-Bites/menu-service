@@ -11,14 +11,14 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      calories: null,
-      description: 'description',
+      calories: 2345,
+      description: 'The Krabby Patty contains both the top bun and the bottom bun, with the top bun containing sesame seeds. It also contains sea cheese, sea lettuce, sea tomato, pickles, ketchup, mustard, mayonnaise, and sea onions, all of which can be seen when a Krabby Patty is being made (and as well correlate to the ingredients that can be found in normal burgers). As well as all of those ingredients is the patty and secret sauce, both of which have unknown ingredients, particularly the patty.',
       imgurl: 'https://nerdist.com/wp-content/uploads/2017/05/spongebob-plankton-krabby-patty.jpg',
-      title: 'title',
-      subtitle: 'subtitle',
-      servings: null,
-      tags: [],
-      time: 'time',
+      title: 'The Magnificent Krabby Patty',
+      subtitle: 'the meat and sauce are secret!',
+      servings: 1,
+      tags: ['secret', 'delicious'],
+      time: '2 minutes',
       wines: [],
     };
   }
@@ -26,19 +26,21 @@ class App extends React.Component {
   componentDidMount() {
     const id = window.location.pathname.split('/')[2];
     if (id) {
-      axios.get(`http://localhost:3001/recipes/${id}/menu`)
+      axios.get(`http://ec2-18-188-102-66.us-east-2.compute.amazonaws.com/recipes/${id}/menu`)
         .then((res) => {
-          this.setState({
-            calories: res.data.calories,
-            description: res.data.description,
-            imgurl: res.data.imgurl,
-            title: res.data.name,
-            subtitle: res.data.namesub,
-            servings: res.data.servings,
-            tags: res.data.tags,
-            time: res.data.time,
-            wines: res.data.wines,
-          });
+          if (res.data){
+            this.setState({
+              calories: res.data.calories,
+              description: res.data.description,
+              imgurl: res.data.imgurl,
+              title: res.data.name,
+              subtitle: res.data.namesub,
+              servings: res.data.servings,
+              tags: res.data.tags,
+              time: res.data.time,
+              wines: res.data.wines,
+            });
+          }
         })
         .catch(err => console.log(err));
     }

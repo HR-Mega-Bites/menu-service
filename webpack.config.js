@@ -1,3 +1,4 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 const SRC_DIR = path.join(__dirname, '/client/src');
@@ -19,8 +20,18 @@ module.exports = {
           presets: ['react', 'env'],
         },
       },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+        ],
+      },
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin({ filename: 'menustyles.css' }),
+  ],
   resolve: {
     extensions: ['.js', '.jsx'],
   },
