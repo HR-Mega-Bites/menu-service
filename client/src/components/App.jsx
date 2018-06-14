@@ -6,6 +6,8 @@ import RecipeInfo from './RecipeInfo';
 import RecipeDescription from './RecipeDescription';
 import WinePairings from './WinePairings';
 
+const isValidId = id => /^\d+$/.test(id);
+
 /* eslint-disable */
 class App extends React.Component {
   constructor() {
@@ -25,9 +27,10 @@ class App extends React.Component {
 
   componentDidMount() {
     const id = window.location.pathname.split('/')[2];
-    if (id) {
-      axios.get(`http://ec2-18-188-102-66.us-east-2.compute.amazonaws.com/recipes/${id}/menu`)
-        .then((res) => {
+    if (isValidId(id)) {
+      // axios.get(`http://ec2-18-188-102-66.us-east-2.compute.amazonaws.com/recipes/${id}/menu`)
+      axios.get(`http://localhost:3001/recipes/${id}/menu`)
+        .then(res => {
           if (res.data){
             this.setState({
               calories: res.data.calories,
