@@ -1,7 +1,7 @@
 const pg = require('pg');
 
 const pgClient = new pg.Client({
-  host: '172.17.0.2',
+  host: 'localhost',
   user: 'postgres',
   database: 'menuservice',
 });

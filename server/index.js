@@ -20,9 +20,9 @@ app.get('/recipes/:id/menu', (req, res) => {
                      WHERE p.recipeid = ${id}`;
 
   redisClient.get(id, (err, result) => {
-    if (result) { // if recipe info is cached in redis, send cached result to client
+    if (result) { 
       res.send(JSON.parse(result));
-    } else { // otherwise query the database and save info to cache
+    } else {
       pgClient.query(recipeQuery, (err, recipeInfo) => {
         if (err) {
           res.status(500);

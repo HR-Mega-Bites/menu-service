@@ -30,7 +30,7 @@ class App extends React.Component {
     if (isValidId(id)) {
       // axios.get(`http://ec2-18-188-102-66.us-east-2.compute.amazonaws.com/recipes/${id}/menu`)
       axios.get(`http://localhost:3001/recipes/${id}/menu`)
-        .then((res) => {
+        .then(res => {
           if (res.data){
             this.setState({
               calories: res.data.calories,
