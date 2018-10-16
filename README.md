@@ -34,7 +34,7 @@ node database/seed.js
 ```
 5. start up the server and bundle files
 ```
-npm run build && start
+npm run build && npm start
 ```
 
 ## Requirements
