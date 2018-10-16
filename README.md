@@ -17,23 +17,22 @@
 1. [Development](#development)
 
 ## Getting Started
-1. npm start
 
-2. Start up your postgreSQL server and create a 'menuservice' database
+1. Start up your postgreSQL server and create a 'menuservice' database
  ```
  psql postgres -U <YOUR USER OR POSTGRES>
  postgres=# CREATE DATABASE menuservice;
  ```
-3. Change the user in the database/index.js file to be your db user.
-4. set up the database with the schema
+2. Change the user in the database/index.js file to be your db user.
+3. set up the database with the schema
 ```
 psql megabites < ./database/docker/schema.sql
 ```
-5. seed the database
+4. seed the database
 ```
 node database/seed.js
 ```
-6. start up the server and bundle files
+5. start up the server and bundle files
 ```
 npm run build && start
 ```
