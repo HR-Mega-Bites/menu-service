@@ -1,6 +1,6 @@
-# Project Name
+# Mega Bites : Menu Component
 
-> HR Mega Bites
+> Component displaying meal image, information, description, and recommended wine pairings.
 
 ## Related Projects
 
@@ -11,13 +11,32 @@
 
 ## Table of Contents
 
-1. [Usage](#Usage)
+1. [Getting Started](#getting-started)
+1. [Usage](#usage)
 1. [Requirements](#requirements)
 1. [Development](#development)
 
-## Usage
+## Getting Started
+1. npm start
 
-> Some usage instructions
+2. Start up your postgreSQL server and create a 'menuservice' database
+ ```
+ psql postgres -U <YOUR USER OR POSTGRES>
+ postgres=# CREATE DATABASE menuservice;
+ ```
+3. Change the user in the database/index.js file to be your db user.
+4. set up the database with the schema
+```
+psql megabites < ./database/docker/schema.sql
+```
+5. seed the database
+```
+node database/seed.js
+```
+6. start up the server and bundle files
+```
+npm run build && start
+```
 
 ## Requirements
 
@@ -25,8 +44,6 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
 - etc
-
-## Development
 
 ### Installing Dependencies
 
