@@ -18,16 +18,11 @@
 
 ## Getting Started
 
-1. Start up your postgreSQL server and create a 'menuservice' database
- ```
- psql postgres -U <YOUR USER OR POSTGRES>
- postgres=# CREATE DATABASE menuservice;
- ```
+1. Start up your postgreSQL server and create a 'menuservice' database by running the sql file.
+```
+psql < ./database/docker/schema.sql
+```
 2. Change the user in the database/index.js file to be your db user.
-3. set up the database with the schema
-```
-psql megabites < ./database/docker/schema.sql
-```
 4. seed the database
 ```
 node database/seed.js
